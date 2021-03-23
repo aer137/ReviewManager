@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Python button script
+        </title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            .container {
+                margin: auto;
+                width: 50%;
+                border: 3px solid rgb(218, 223, 218);
+                padding: 40px;
+                text-align: center;
+                align-content: center;
+            }
+
+            body {
+                font-family: 'Castoro', serif;
+                min-height: 100vh;
+                perspective: 1000px;
+                background-color: rgb(121, 173, 171);
+            }
+            button{
+                background-color: rgb(64, 95, 100);
+                padding: 1rem 1rem;
+                border: none;
+                box-shadow: 5px 5px 10px rgb(67, 134, 146);
+                border-radius: 30px;
+                cursor: pointer;
+                font-weight: bold;
+                color: #ffffff;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1 style="color:rgb(218, 223, 218)">Google Review Manager</h1>
+            <br><br>
+            <form action="/external/" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <br><br>
+                <input type="file" name="image" required>
+                <br><br>
+                <input class="butt" type="submit" value="Resquest Reviews">
+            </form>
+            <br><br>
+            <button onclick="location.href = '{% url 'scrape' %}'">Check Google</button>
+            <br><br>
+            <button onclick="location.href = '{% url 'script' %}'">Request Again</button>
+        </div>
+    </body>
+</html>

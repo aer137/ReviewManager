@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Python button script
+        </title>
+    </head>
+    <body>
+        <h1>Log In</h1>
+        <form action="{% url 'login' %}" class="site-form" method="post">
+            {% csrf_token %}
+            {{ form }}
+            <input type="submit" value="Login">
+        </form>
+    </body>
+</html>
